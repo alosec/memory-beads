@@ -1,0 +1,5 @@
+# Beads local databases (not tracked)
+*.db
+
+# Only track JSONL exports (source of truth)
+!*.jsonl

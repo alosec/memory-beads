@@ -1,5 +1,5 @@
 {
-  "name": "claude-memory-beads",
+  "name": "memory-beads",
   "displayName": "Memory Bank + Beads Workflow System",
   "version": "0.1.0",
   "description": "Complete workflow system for team collaboration featuring Memory Bank documentation patterns, Beads git-native issue tracking, and orchestrated subagent workflows (planning → coding → testing). Includes productivity commands (/prepare, /plan) and specialized skills for filtered build output and E2E testing.",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ideaflow/claude-memory-beads"
+    "url": "https://github.com/ideaflow/memory-beads"
   },
   "license": "MIT",
   "keywords": [
@@ -29,7 +29,7 @@
   "visibility": "private",
   "installation": {
     "type": "git",
-    "url": "git@github.com:ideaflow/claude-memory-beads.git"
+    "url": "git@github.com:ideaflow/memory-beads.git"
   },
   "features": [
     {

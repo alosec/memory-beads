@@ -1,5 +1,5 @@
 {
-  "name": "claude-memory-beads",
+  "name": "memory-beads",
   "version": "0.1.0",
   "description": "Orchestrated workflow system with Memory Bank documentation, Beads issue tracking, subagents (planning, coding, testing), and productivity commands for team collaboration",
   "author": {
