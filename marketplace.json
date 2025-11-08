@@ -1,0 +1,59 @@
+{
+  "name": "claude-memory-beads",
+  "displayName": "Memory Bank + Beads Workflow System",
+  "version": "0.1.0",
+  "description": "Complete workflow system for team collaboration featuring Memory Bank documentation patterns, Beads git-native issue tracking, and orchestrated subagent workflows (planning → coding → testing). Includes productivity commands (/prepare, /plan) and specialized skills for filtered build output and E2E testing.",
+  "author": {
+    "name": "ideaflow",
+    "url": "https://github.com/ideaflow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ideaflow/claude-memory-beads"
+  },
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "memory-bank",
+    "beads",
+    "issue-tracking",
+    "documentation",
+    "subagents",
+    "planning",
+    "coding",
+    "testing",
+    "collaboration",
+    "team-productivity"
+  ],
+  "category": "productivity",
+  "visibility": "private",
+  "installation": {
+    "type": "git",
+    "url": "git@github.com:ideaflow/claude-memory-beads.git"
+  },
+  "features": [
+    {
+      "name": "Memory Bank System",
+      "description": "Structured documentation approach with shared/personal namespaces for team knowledge management"
+    },
+    {
+      "name": "Beads Issue Tracking",
+      "description": "Git-native issue tracker with dependency awareness and JSONL export/import workflow"
+    },
+    {
+      "name": "Orchestrated Subagents",
+      "description": "Specialized agents for planning, coding, and testing that work together in isolated contexts"
+    },
+    {
+      "name": "Productivity Commands",
+      "description": "Essential slash commands like /prepare (workspace orientation) and /plan (feature planning)"
+    },
+    {
+      "name": "Filtered Output Skills",
+      "description": "Skills for quiet-build and quiet-deploy that reduce context noise during CI operations"
+    }
+  ],
+  "requirements": {
+    "claudeCode": ">=1.0.0"
+  }
+}

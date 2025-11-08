@@ -1,0 +1,41 @@
+{
+  "name": "claude-memory-beads",
+  "version": "0.1.0",
+  "description": "Orchestrated workflow system with Memory Bank documentation, Beads issue tracking, subagents (planning, coding, testing), and productivity commands for team collaboration",
+  "author": {
+    "name": "ideaflow",
+    "url": "https://github.com/ideaflow"
+  },
+  "keywords": [
+    "workflow",
+    "memory-bank",
+    "beads",
+    "issue-tracking",
+    "documentation",
+    "subagents",
+    "planning",
+    "testing",
+    "collaboration"
+  ],
+  "agents": [
+    "./agents/planning-agent.md",
+    "./agents/coding-agent.md",
+    "./agents/testing-agent.md",
+    "./agents/analysis-agent.md",
+    "./agents/research-agent.md",
+    "./agents/reference-agent.md"
+  ],
+  "commands": [
+    "./commands/prepare.md",
+    "./commands/plan.md",
+    "./commands/define-skill.md",
+    "./commands/navigate.md",
+    "./commands/new-window.md"
+  ],
+  "skills": [
+    "./skills/planning/SKILL.md",
+    "./skills/testing/SKILL.md",
+    "./skills/quiet-build/SKILL.md",
+    "./skills/quiet-deploy/SKILL.md"
+  ]
+}
