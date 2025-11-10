@@ -325,7 +325,7 @@ claude plugin reload memory-beads
 ## Requirements
 
 - **Claude Code**: >= 1.0.0
-- **Beads CLI**: Install from [github.com/beadslabs/beads](https://github.com/beadslabs/beads)
+- **Beads CLI**: Install from [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
 - **Git**: For version control and plugin installation
 
 ---
