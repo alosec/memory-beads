@@ -1,6 +1,8 @@
 # Claude Memory + Beads Workflow System
 
-**A complete workflow plugin for Claude Code featuring Memory Bank documentation, Beads issue tracking, and orchestrated subagent workflows.**
+**A personal workflow system for Claude Code featuring Memory Bank documentation, Beads issue tracking, and orchestrated subagent workflows.**
+
+> Personal repository by [@alosec](https://github.com/alosec) - Structured documentation and issue tracking patterns for AI-assisted development.
 
 ---
 
@@ -24,6 +26,10 @@ Six specialized agents that work together in isolated contexts:
 ### ⚡ Productivity Commands
 - `/prepare` - Workspace orientation (memory bank + git + beads status)
 - `/plan` - Feature planning workflow with file structure trees
+- `/act` - Execute tasks and implementations
+- `/analyze` - Analyze code and problems
+- `/elaborate` - Elaborate on concepts and details
+- `/chart` - Generate visual charts and diagrams
 - `/navigate` - Codebase navigation helper
 - `/define-skill` - Skill creation wizard
 - `/new-window` - Window management utilities
@@ -38,11 +44,11 @@ Six specialized agents that work together in isolated contexts:
 
 ## Installation
 
-### Option 1: Install from Private GitHub Repo
+### Option 1: Install from GitHub
 
 ```bash
 # Install the plugin
-claude plugin install git@github.com:ideaflow/claude-memory-beads.git
+claude plugin install https://github.com/alosec/memory-beads.git
 
 # Verify installation
 claude plugin list
@@ -52,14 +58,14 @@ claude plugin list
 
 ```bash
 # Clone the repository
-git clone git@github.com:ideaflow/claude-memory-beads.git
-cd claude-memory-beads
+git clone https://github.com/alosec/memory-beads.git
+cd memory-beads
 
 # Install locally
 claude plugin install .
 
 # Or symlink for development
-ln -s $(pwd) ~/.claude/plugins/claude-memory-beads
+ln -s $(pwd) ~/.claude/plugins/memory-beads
 ```
 
 ---
@@ -300,11 +306,11 @@ claude plugin list
 
 ```bash
 # Pull latest changes
-cd ~/.claude/plugins/claude-memory-beads
+cd ~/.claude/plugins/memory-beads
 git pull
 
 # Reload Claude Code
-claude plugin reload claude-memory-beads
+claude plugin reload memory-beads
 ```
 
 ---
@@ -325,20 +331,21 @@ MIT License - see [LICENSE](./LICENSE) file for details
 
 ## Contributing
 
-This is a private plugin for ideaflow team use. For issues or suggestions:
+This is a personal workflow system. Feel free to fork and adapt for your own use! For issues or suggestions:
 
-1. Create a Beads issue in your project
-2. Export and commit to `.beads/shared/issues.jsonl`
-3. Reference the issue in discussion
+1. Open a GitHub issue
+2. Or fork the repo and submit a PR
+3. Share your own workflow patterns!
 
 ---
 
 ## Support
 
-For questions or issues with the plugin:
+For questions or issues:
 - Check plugin loading: `claude --debug`
-- Verify structure: `ls -la ~/.claude/plugins/claude-memory-beads/`
+- Verify structure: `ls -la ~/.claude/plugins/memory-beads/`
 - Review agent definitions in `agents/`
 - Check command syntax in `commands/`
+- Open an issue on GitHub
 
 **Happy coding!** 🚀
