@@ -138,32 +138,35 @@ memory-bank/
 ### Quick Commands
 
 ```bash
-# Create shared project issue
-bd create "Fix sync bug" -t bug -p 0 --db .beads/shared/mew.db
+# Create shared/team issue (auto-discovered based on directory)
+bd create "Fix sync bug" -t bug -p 0
 
-# Create personal task
+# Create personal task (separate namespace)
 bd create "Research auth patterns" -t task -p 1 --db .beads/alex/alex.db
 
-# Update status
-bd update mew-123 --status in_progress --db .beads/shared/mew.db
+# Update status (shared issues)
+bd update project-123 --status in_progress
 
-# Export before push
-bd export --db .beads/shared/mew.db -o .beads/shared/issues.jsonl
-git add .beads/shared/issues.jsonl
-git commit -m "beads: update mew-123"
+# Git workflow (auto-export via hooks)
+git add .
+git commit -m "beads: update project-123"  # Hooks auto-export to .beads/issues.jsonl
 git push
 
-# Import after pull
+# After pull - import to sync
 git pull
-bd import --db .beads/shared/mew.db -i .beads/shared/issues.jsonl
+bd import  # Reads from .beads/issues.jsonl automatically
 ```
 
 ### Two-Tier Tracking
 
 | Tier | Prefix | Database Path | Use Case |
 |------|--------|---------------|----------|
-| **Shared** | `{project}-*` | `.beads/shared/{project}.db` | Team-visible work |
-| **Personal** | `{name}-*` | `.beads/{name}/{name}.db` | Individual todos |
+| **Shared** | `{project}-*` | `.beads/{project}.db` | Team-visible work (auto-discovered) |
+| **Personal** | `{name}-*` | `.beads/{name}/{name}.db` | Personal todos (explicit --db flag) |
+
+**Key Pattern:**
+- **Shared issues**: Use Beads auto-discovery (`.beads/{project}.db` + `.beads/issues.jsonl`)
+- **Personal tasks**: Use explicit `--db` flag to avoid crowding shared issue space
 
 ---
 
@@ -264,22 +267,26 @@ touch memory-bank/alex/active/{currentWork,blockers,nextUp}.md
 
 1. Initialize databases:
 ```bash
-# Shared project issues
-bd init --prefix mew --db .beads/shared/mew.db
+# Shared/team issues (auto-discovered by directory name)
+bd init --prefix myproject
 
-# Personal tasks
+# Personal tasks (separate namespace)
 bd init --prefix alex --db .beads/alex/alex.db
 ```
 
 2. Add to `.gitignore`:
-```
+```gitignore
+# Ignore all .db files
+.beads/*.db
 .beads/*/*.db
+
+# Track the shared issues JSONL
+!.beads/issues.jsonl
 ```
 
-3. Track JSONL files:
-```
-!.beads/shared/issues.jsonl
-!.beads/alex/issues.jsonl
+3. Install git hooks (optional - auto-export on commit):
+```bash
+bd hooks install
 ```
 
 ---
